@@ -11,22 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductResource {
 
-  /*@GetMapping(value = "/products/search")
+  @GetMapping(value = "/products/search")
   public ResponseEntity<List<Product>> searchProducts(@RequestParam String searchText) {
     return ResponseEntity.ok(Collections.singletonList(Product.builder()
-            .imageUrl("https://avatars3.githubusercontent.com/u/31825558?s=460&v=4")
+            .imageUrl("http://mobileimages.lowes.com/product/converted/749241/749241415616.jpg?size=pdhi")
             .title("Chair")
-            .subtitle("wooden chair")
+            .subtitle("patio chair")
             .build()));
-  }*/
+  }
 
-  @GetMapping(value = "/products/search")
+  /*@GetMapping(value = "/products/search")
   public ResponseEntity<Product> searchProducts(@RequestParam String searchText) {
     return ResponseEntity.ok(Product.builder()
             .imageUrl("https://avatars3.githubusercontent.com/u/31825558?s=460&v=4")
             .title("Chair")
             .subtitle("wooden chair")
             .build());
-  }
+  }*/
 
 }
