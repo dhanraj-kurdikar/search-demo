@@ -15,8 +15,8 @@ public class ProductResource {
   public ResponseEntity<List<Product>> searchProducts(@RequestParam String searchText) {
     return ResponseEntity.ok(Collections.singletonList(Product.builder()
             .imageUrl("http://mobileimages.lowes.com/product/converted/749241/749241415616.jpg?size=pdhi")
-            .title("Chair")
-            .subtitle("patio chair")
+            .title("Patio Chair")
+            .price("$30")
             .build()));
   }
 

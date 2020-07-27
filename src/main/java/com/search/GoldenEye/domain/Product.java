@@ -13,6 +13,6 @@ public class Product {
 
   private String imageUrl;
   private String title;
-  private String subtitle;
+  private String price;
 
 }
