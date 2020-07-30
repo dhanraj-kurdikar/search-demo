@@ -3,12 +3,14 @@ package com.search.GoldenEye.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.search.GoldenEye.domain.Product;
+import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.regex.Pattern;
 import lombok.SneakyThrows;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,10 +46,11 @@ public class ProductService {
 
   @SneakyThrows
   private List<Product> readFileFromResources(final String filename) {
-    URL resource = ProductService.class.getClassLoader().getResource("static/" + filename);
-    byte[] bytes = Files.readAllBytes(Paths.get(resource.toURI()));
-    return objectMapper.readValue(new String(bytes), new TypeReference<List<Product>>() {
-    });
+    try (InputStream in = getClass().getResourceAsStream("/static/" + filename)) {
+      return objectMapper
+              .readValue(new String(IOUtils.toByteArray(in)), new TypeReference<List<Product>>() {
+              });
+    }
   }
 
   private boolean isChair(final String query) {

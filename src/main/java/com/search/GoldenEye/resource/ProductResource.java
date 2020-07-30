@@ -21,13 +21,4 @@ public class ProductResource {
     return ResponseEntity.ok(productService.searchProducts(query));
   }
 
-  /*@GetMapping(value = "/products/search")
-  public ResponseEntity<Product> searchProducts(@RequestParam String searchText) {
-    return ResponseEntity.ok(Product.builder()
-            .imageUrl("https://avatars3.githubusercontent.com/u/31825558?s=460&v=4")
-            .title("Chair")
-            .subtitle("wooden chair")
-            .build());
-  }*/
-
 }
