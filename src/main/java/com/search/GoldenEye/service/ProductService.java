@@ -69,7 +69,7 @@ public class ProductService {
   }
 
   private boolean isWashingMachine(final String query) {
-    Pattern pattern = Pattern.compile("washingMachine", Pattern.CASE_INSENSITIVE);
+    Pattern pattern = Pattern.compile("washing machine", Pattern.CASE_INSENSITIVE);
     return pattern.matcher(query).find();
   }
 
